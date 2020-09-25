@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
 import HeaderContainer from "./components/header/header.component"
-import CardArea from "./components/body/card-area/card-area.component"
-import WorkPanel from './components/body/work-panel/work-panel.component'
+import BodyContainer from "./components/body/body.component"
 
 function App() {
   return (
     <div className="App">
     <HeaderContainer></HeaderContainer>
-    <CardArea></CardArea>
-    <WorkPanel></WorkPanel>
+    <BodyContainer></BodyContainer>
     </div>
       );
 }
