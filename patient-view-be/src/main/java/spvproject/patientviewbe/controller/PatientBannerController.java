@@ -1,5 +1,4 @@
 package spvproject.patientviewbe.controller;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +43,5 @@ public class PatientBannerController {
 	public ResponseEntity<?> addPatient(@RequestBody PatientBannerDTO patientBannerDTO) {
     	patientBannerService.createPatientBanner(patientBannerDTO);
 		return ResponseEntity.ok(HttpStatus.OK);
-	}
+}
 }
