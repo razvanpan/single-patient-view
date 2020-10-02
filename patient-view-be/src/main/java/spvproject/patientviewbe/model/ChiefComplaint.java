@@ -24,7 +24,7 @@ public class ChiefComplaint {
 	private String admisionNote;
 
 	public ChiefComplaint() {
-		
+
 	}
 
 	public ChiefComplaint(int id, Code code, String editedBy, String admisionNote) {
