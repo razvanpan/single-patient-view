@@ -1,10 +1,10 @@
 package spvproject.patientviewbe.model;
 
-public class PainAssessmentModel {
+public class PainAssessment {
 	private final int painAssessment;
 	private final int id;
 	
-	public PainAssessmentModel(int id,int painAssessment)
+	public PainAssessment(int id,int painAssessment)
 	
 	{
 		this.painAssessment=painAssessment;
