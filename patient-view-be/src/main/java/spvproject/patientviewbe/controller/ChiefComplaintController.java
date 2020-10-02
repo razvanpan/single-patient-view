@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import spvproject.patientviewbe.dto.ChiefComplaintDTO;
-import spvproject.patientviewbe.model.ChiefComplaintModel;
+import spvproject.patientviewbe.model.ChiefComplaint;
 import spvproject.patientviewbe.service.ChiefComplaintService;
 
 @RestController
@@ -29,7 +29,7 @@ public class ChiefComplaintController {
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
 	@GetMapping("/{id}")
-    public ChiefComplaintModel getData(@PathVariable final int id) {
+    public ChiefComplaint getData(@PathVariable final int id) {
         return chiefComplaintService.get(id);
     }
 

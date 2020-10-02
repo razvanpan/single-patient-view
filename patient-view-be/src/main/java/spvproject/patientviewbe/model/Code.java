@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CodeModel {
+public class Code {
 	
 
 	@Id
@@ -20,12 +20,12 @@ public class CodeModel {
 	@Column
 	private String translationCode;
 
-	public CodeModel() {
+	public Code() {
 		
 	}
 
-	public CodeModel(int id, String idCode, String translationCode) {
-		super();
+	public Code(int id, String idCode, String translationCode) {
+		
 		this.id = id;
 		this.idCode = idCode;
 		this.translationCode = translationCode;
