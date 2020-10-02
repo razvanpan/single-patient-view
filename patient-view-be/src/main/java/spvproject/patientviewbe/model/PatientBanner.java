@@ -1,7 +1,7 @@
 package spvproject.patientviewbe.model;
 
 
-public class PatientBannerModel {
+public class PatientBanner {
 	private int ID;
 	private String name;
 	private String gender;
@@ -16,7 +16,7 @@ public class PatientBannerModel {
 	
 	
 	
-	public PatientBannerModel(int iD, String name, String gender, int age, String birthDate, String lengthStay,
+	public PatientBanner(int iD, String name, String gender, int age, String birthDate, String lengthStay,
 			String eD, String allergies, String eID, String triage, String risks) {
 		this.ID = iD;
 		this.name = name;
