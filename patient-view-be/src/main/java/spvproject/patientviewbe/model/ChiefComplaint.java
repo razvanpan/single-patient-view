@@ -8,14 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class ChiefComplaintModel {
+public class ChiefComplaint {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@OneToOne
-	private CodeModel code;
+	private Code code;
 
 	@Column
 	private String editedBy;
@@ -23,11 +23,11 @@ public class ChiefComplaintModel {
 	@Column
 	private String admisionNote;
 
-	public ChiefComplaintModel() {
+	public ChiefComplaint() {
 		
 	}
 
-	public ChiefComplaintModel(int id, CodeModel code, String editedBy, String admisionNote) {
+	public ChiefComplaint(int id, Code code, String editedBy, String admisionNote) {
 
 		this.id = id;
 		this.code = code;
@@ -39,11 +39,11 @@ public class ChiefComplaintModel {
 		return id;
 	}
 
-	public CodeModel getCode() {
+	public Code getCode() {
 		return code;
 	}
 
-	public void setCode(CodeModel code) {
+	public void setCode(Code code) {
 		this.code = code;
 	}
 

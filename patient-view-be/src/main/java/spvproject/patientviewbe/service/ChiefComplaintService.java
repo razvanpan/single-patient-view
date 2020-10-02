@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import spvproject.patientviewbe.dto.ChiefComplaintDTO;
-import spvproject.patientviewbe.model.ChiefComplaintModel;
-import spvproject.patientviewbe.model.CodeModel;
+import spvproject.patientviewbe.model.ChiefComplaint;
+import spvproject.patientviewbe.model.Code;
 import spvproject.patientviewbe.repository.ChiefComplaintRepository;
 import spvproject.patientviewbe.repository.CodeRepository;
 
@@ -16,22 +16,22 @@ public class ChiefComplaintService {
 	private final CodeService codeService;
 
 	@Autowired
-	public ChiefComplaintService(final ChiefComplaintRepository cheifComplaintRepository,
+	public ChiefComplaintService(final ChiefComplaintRepository chiefComplaintRepository,
 			final CodeService codeService) {
-		this.cheifComplaintRepository = cheifComplaintRepository;
+		this.cheifComplaintRepository = chiefComplaintRepository;
 		this.codeService = codeService;
 	}
 
 	public void create( ChiefComplaintDTO chiefComplaintData) {
-		CodeModel codeModel = new CodeModel(0, chiefComplaintData.getCode().getIdCode(),
+		Code codeModel = new Code(0, chiefComplaintData.getCode().getIdCode(),
 				chiefComplaintData.getCode().getTranslationCode());
-		ChiefComplaintModel chiefComplaintModel = new ChiefComplaintModel(0, codeModel,
+		ChiefComplaint chiefComplaintModel = new ChiefComplaint(0, codeModel,
 				chiefComplaintData.getEditedBy(), chiefComplaintData.getAdmisionNote());
 		codeService.create(codeModel);
 		cheifComplaintRepository.save(chiefComplaintModel);
 	}
 
-	public ChiefComplaintModel get(final int id) {
+	public ChiefComplaint get(final int id) {
 		return cheifComplaintRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Not found"));
 	}
 
