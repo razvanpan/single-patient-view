@@ -14,21 +14,21 @@ import java.util.List;
 @RestController
 public class VitalSignController {
 
-    private final VitalSignService vitalSignService;
+	private final VitalSignService vitalSignService;
 
-    @Autowired
-    public VitalSignController(VitalSignService vitalSignService) {
-        this.vitalSignService = vitalSignService;
-    }
+	@Autowired
+	public VitalSignController(VitalSignService vitalSignService) {
+		this.vitalSignService = vitalSignService;
+	}
 
-    @GetMapping("/vitalSigns")
-    public List<VitalSignDTO> getVitalSigns() {
-        return vitalSignService.getAllVitalSigns().get();
-    }
+	@GetMapping("/vitalSigns")
+	public List<VitalSignDTO> getVitalSigns() {
+		return vitalSignService.getAllVitalSigns().get();
+	}
 
-    @PostMapping("/addVitalSign")
-    public ResponseEntity<?> addVitalSign(@RequestBody VitalSignDTO vitalSignDTO) {
-        vitalSignService.createVitalSign(vitalSignDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
-    }
+	@PostMapping("/addVitalSign")
+	public ResponseEntity<?> addVitalSign(@RequestBody VitalSignDTO vitalSignDTO) {
+		vitalSignService.createVitalSign(vitalSignDTO);
+		return ResponseEntity.ok(HttpStatus.OK);
+	}
 }

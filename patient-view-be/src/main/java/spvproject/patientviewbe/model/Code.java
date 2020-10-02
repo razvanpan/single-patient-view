@@ -8,24 +8,23 @@ import javax.persistence.Id;
 
 @Entity
 public class Code {
-	
 
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column
 	private String idCode;
-	
+
 	@Column
 	private String translationCode;
 
 	public Code() {
-		
+
 	}
 
 	public Code(int id, String idCode, String translationCode) {
-		
+
 		this.id = id;
 		this.idCode = idCode;
 		this.translationCode = translationCode;
@@ -50,5 +49,5 @@ public class Code {
 	public int getId() {
 		return id;
 	}
-	
+
 }

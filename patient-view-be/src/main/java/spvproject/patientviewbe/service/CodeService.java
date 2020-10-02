@@ -16,13 +16,12 @@ public class CodeService {
 		this.codeRepository = codeRepository;
 	}
 
-	public void create( Code codeModel) {
+	public void create(Code codeModel) {
 		codeRepository.save(codeModel);
 	}
 
 	public Code get(final int id) {
 		return codeRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Not found"));
 	}
-
 
 }
