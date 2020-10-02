@@ -1,18 +1,15 @@
 package spvproject.patientviewbe.dto;
 
-
-
 public class CodeModelDTO {
 
-	
 	private int id;
-	
+
 	private String idCode;
-	
+
 	private String translationCode;
 
 	public CodeModelDTO(int id, String idCode, String translationCode) {
-		
+
 		this.id = id;
 		this.idCode = idCode;
 		this.translationCode = translationCode;

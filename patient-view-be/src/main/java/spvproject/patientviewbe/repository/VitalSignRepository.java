@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface VitalSignRepository extends CrudRepository<VitalSignModel, Integer> {
 
-    List<VitalSignModel> findAll();
+	List<VitalSignModel> findAll();
 }

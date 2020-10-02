@@ -25,14 +25,15 @@ public class ChiefComplaintController {
 		this.chiefComplaintService = chiefComplaintService;
 	}
 
-	@PostMapping(path="/create")
+	@PostMapping(path = "/create")
 	public ResponseEntity<?> create(@RequestBody ChiefComplaintDTO chiefComplaintData) {
 		chiefComplaintService.create(chiefComplaintData);
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
+
 	@GetMapping("/{id}")
-    public ChiefComplaint getData(@PathVariable final int id) {
-        return chiefComplaintService.get(id);
-    }
+	public ChiefComplaint getData(@PathVariable final int id) {
+		return chiefComplaintService.get(id);
+	}
 
 }
