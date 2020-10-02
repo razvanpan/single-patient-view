@@ -62,8 +62,6 @@ public class PatientBanner {
 		this.risks = risks;
 	}
 
-
-
 	public String getID() {
 		return ID;
 	}
