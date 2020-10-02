@@ -3,7 +3,7 @@ package spvproject.patientviewbe.model;
 import javax.persistence.*;
 
 @Entity
-public class VitalSignModel {
+public class VitalSign {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,17 +21,17 @@ public class VitalSignModel {
 	@Column
 	private String timeOfSubmit;
 
-	public VitalSignModel() {
+    public VitalSign() {
 
 	}
 
-	public VitalSignModel(int id, String vitalSign, String vitalSignValue, String unitMeasure, String timeOfSubmit) {
-		this.id = id;
-		this.vitalSign = vitalSign;
-		this.vitalSignValue = vitalSignValue;
-		this.unitMeasure = unitMeasure;
-		this.timeOfSubmit = timeOfSubmit;
-	}
+    public VitalSign(int id, String vitalSign, String vitalSignValue, String unitMeasure, String timeOfSubmit) {
+        this.id = id;
+        this.vitalSign = vitalSign;
+        this.vitalSignValue = vitalSignValue;
+        this.unitMeasure = unitMeasure;
+        this.timeOfSubmit = timeOfSubmit;
+    }
 
 	public int getId() {
 		return id;
