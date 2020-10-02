@@ -1,16 +1,26 @@
-package spvproject.patientviewbe.Controller;
+package spvproject.patientviewbe.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import spvproject.patientviewbe.Model.AnamnesisModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import spvproject.patientviewbe.model.Anamnesis;
+import spvproject.patientviewbe.repository.AnamnesisRepository;
+import java.util.List;
 
 @RestController
 @RequestMapping("/anamnesis")
 public class AnamnesisController {
 
-    @GetMapping("/first")
-    public AnamnesisModel anamnesisdata(){
-        return new AnamnesisModel(1,"3-august-2020","fever","acetaminophen","vitamin C","none","none");
+    @Autowired
+    AnamnesisRepository anamnesisRepository;
+
+    @GetMapping("/get-all")
+    public List<Anamnesis> getAllData(){
+        return (List<Anamnesis>) anamnesisRepository.findAll();
+    }
+
+    @PostMapping("/add")
+    public Anamnesis addData(@RequestBody Anamnesis anamnesisDTO){
+        Anamnesis anamnesis = new Anamnesis(0,anamnesisDTO.getLastLabsWork(), anamnesisDTO.getPresentSymptoms(), anamnesisDTO.getMedicines(), anamnesisDTO.getSupplements(), anamnesisDTO.getFamilyMedicalHistory(), anamnesisDTO.getAllergies());
+        return anamnesisRepository.save(anamnesis);
     }
 }
