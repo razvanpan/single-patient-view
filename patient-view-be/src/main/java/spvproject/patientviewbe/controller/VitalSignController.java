@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import spvproject.patientviewbe.dto.VitalSignDTO;
-import spvproject.patientviewbe.model.VitalSignModel;
 import spvproject.patientviewbe.services.VitalSignService;
 
 import java.util.List;
