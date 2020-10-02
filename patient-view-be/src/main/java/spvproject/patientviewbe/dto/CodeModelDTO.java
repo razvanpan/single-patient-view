@@ -12,7 +12,7 @@ public class CodeModelDTO {
 	private String translationCode;
 
 	public CodeModelDTO(int id, String idCode, String translationCode) {
-		super();
+		
 		this.id = id;
 		this.idCode = idCode;
 		this.translationCode = translationCode;
