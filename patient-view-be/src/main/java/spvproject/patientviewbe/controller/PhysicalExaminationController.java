@@ -8,24 +8,28 @@ import spvproject.patientviewbe.repository.PhysicalExaminationRepository;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http:localhost:3000")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
+@RequestMapping("/physical-examination")
 public class PhysicalExaminationController {
 
     @Autowired
     PhysicalExaminationRepository physicalExaminationRepository;
 
-    @GetMapping(path="/form")
+
+    @GetMapping(path="/data")
     public List<PhysicalExamination> getAllData(){
-        return physicalExaminationRepository.findAll();
+        return (List<PhysicalExamination>) physicalExaminationRepository.findAll();
     }
 
-    @PostMapping(path="/form")
+
+    @PostMapping(path="/data")
     public PhysicalExamination addData(@RequestBody PhysicalExamination physExamDTO){
         return physicalExaminationRepository.save(physExamDTO);
     }
 
-    @DeleteMapping(path="/form")
+    @DeleteMapping(path="/data")
+
     public void deleteData(@PathVariable long id){
         physicalExaminationRepository.deleteById(id);
     }
