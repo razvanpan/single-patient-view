@@ -8,31 +8,30 @@ import javax.persistence.Id;
 
 @Entity
 public class PainAssessment {
-	
+
 	@Column
-	private  int painAssessment;
-	
-	 @Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private  int id;
-	
-	public PainAssessment(int id,int painAssessment)
-	
+	private int painAssessment;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	public PainAssessment(int id, int painAssessment)
+
 	{
-		this.painAssessment=painAssessment;
-		this.id=id;
-		
-		
+		this.painAssessment = painAssessment;
+		this.id = id;
+
 	}
+
 	public int getPainAssessment() {
-		
+
 		return painAssessment;
 	}
+
 	public int getId() {
-		
+
 		return id;
 	}
-	
+
 }
-
-
