@@ -1,4 +1,5 @@
 package spvproject.patientviewbe.controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,30 +18,30 @@ import spvproject.patientviewbe.service.PatientBannerService;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping("GET/patient-banner")
+@RequestMapping("/patient-banner")
 public class PatientBannerController {
-	
+
 	private PatientBannerService patientBannerService;
-	
+
 	@GetMapping("/data")
 	public PatientBanner getPatientBanner() {
 		return new PatientBanner("0039876", "Bruno Mertens", "M", 42, "20.09.1976", "03:42", "302",
 				"Peniciline, Bee Venom, Latex", "39223456", "-", "🏥 💗");
 	}
-	
+
 	@Autowired
 	public PatientBannerController(PatientBannerService patientBannerService) {
 		this.patientBannerService = patientBannerService;
 	}
 
-    @GetMapping("/all")
+	@GetMapping("/all")
 	public List<PatientBannerDTO> getBanner() {
 		return patientBannerService.getAllPatientBanner().get();
 	}
-    
-    @PostMapping("/add")
+
+	@PostMapping("/add")
 	public ResponseEntity<?> addPatient(@RequestBody PatientBannerDTO patientBannerDTO) {
-    	patientBannerService.createPatientBanner(patientBannerDTO);
+		patientBannerService.createPatientBanner(patientBannerDTO);
 		return ResponseEntity.ok(HttpStatus.OK);
-}
+	}
 }
