@@ -1,8 +1,20 @@
 package spvproject.patientviewbe.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class PainAssessment {
-	private final int painAssessment;
-	private final int id;
+	
+	@Column
+	private  int painAssessment;
+	
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private  int id;
 	
 	public PainAssessment(int id,int painAssessment)
 	
@@ -16,7 +28,7 @@ public class PainAssessment {
 		
 		return painAssessment;
 	}
-	public int getid() {
+	public int getId() {
 		
 		return id;
 	}

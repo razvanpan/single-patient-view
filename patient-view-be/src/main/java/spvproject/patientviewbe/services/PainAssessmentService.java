@@ -32,7 +32,7 @@ public class PainAssessmentService {
 	}
 
 	private Function<PainAssessment, PainAssessmentDTO> convertPainAssessmenttoData() {
-		return painAssessment -> new PainAssessmentDTO(painAssessment.getid(), painAssessment.getPainAssessment());
+		return painAssessment -> new PainAssessmentDTO(painAssessment.getId(), painAssessment.getPainAssessment());
 
 	}
 }
