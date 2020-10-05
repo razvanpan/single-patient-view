@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 import spvproject.patientviewbe.model.PatientBanner;
 
 @RestController
-@RequestMapping("GET/patient-banner")
+@RequestMapping("/patient-banner")
 public class PatientBannerController {
-	@GetMapping("/example")
+	@GetMapping("/data")
 	public PatientBanner patientBanner() {
-		return new PatientBanner(1,"Bruno Mertens", "M", 42, 
-				"20.09.1976", "03:42", "302", "Peniciline, Bee Venom, Latex", "39223456","-", "-");
+		return new PatientBanner(1, "Bruno Mertens", "M", 42, "20.09.1976", "03:42", "302",
+				"Peniciline, Bee Venom, Latex", "39223456", "-", "-");
 	}
 }
