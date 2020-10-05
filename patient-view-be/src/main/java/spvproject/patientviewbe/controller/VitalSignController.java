@@ -5,13 +5,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import spvproject.patientviewbe.dto.VitalSignDTO;
-import spvproject.patientviewbe.model.VitalSignModel;
 import spvproject.patientviewbe.services.VitalSignService;
 
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@RequestMapping("/vital-signs")
 public class VitalSignController {
 
 	private final VitalSignService vitalSignService;
@@ -21,12 +21,12 @@ public class VitalSignController {
 		this.vitalSignService = vitalSignService;
 	}
 
-	@GetMapping("/vitalSigns")
+    @GetMapping("/all")
 	public List<VitalSignDTO> getVitalSigns() {
 		return vitalSignService.getAllVitalSigns().get();
 	}
 
-	@PostMapping("/addVitalSign")
+    @PostMapping("/add")
 	public ResponseEntity<?> addVitalSign(@RequestBody VitalSignDTO vitalSignDTO) {
 		vitalSignService.createVitalSign(vitalSignDTO);
 		return ResponseEntity.ok(HttpStatus.OK);
