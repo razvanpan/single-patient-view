@@ -1,4 +1,4 @@
-package spvproject.patientviewbe.services;
+package spvproject.patientviewbe.service;
 
 public class PhysicalExaminationService {
 }
