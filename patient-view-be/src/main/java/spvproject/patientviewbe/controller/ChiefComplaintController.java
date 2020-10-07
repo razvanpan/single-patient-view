@@ -3,6 +3,7 @@ package spvproject.patientviewbe.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import spvproject.patientviewbe.service.ChiefComplaintService;
 
 @RestController
 @RequestMapping("/chief-complaint")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ChiefComplaintController {
 
 	private final ChiefComplaintService chiefComplaintService;
@@ -27,7 +29,14 @@ public class ChiefComplaintController {
 
 	@PostMapping(path = "/create")
 	public ResponseEntity<?> create(@RequestBody ChiefComplaintDTO chiefComplaintData) {
-		chiefComplaintService.create(chiefComplaintData);
+		if (chiefComplaintData.getId() > 0) {
+			if (!chiefComplaintService.update(chiefComplaintData.getId(), chiefComplaintData.getAdmisionNote())) {
+				chiefComplaintService.create(chiefComplaintData);
+			}
+		} else {
+			chiefComplaintService.create(chiefComplaintData);
+		}
+
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
 
