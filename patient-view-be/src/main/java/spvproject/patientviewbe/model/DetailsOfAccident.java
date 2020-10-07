@@ -1,23 +1,48 @@
 package spvproject.patientviewbe.model;
 
+import javax.persistence.*;
 
-public class DetailsOfAccidentModel {
+@Entity
+public class DetailsOfAccident {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@Column
 	private String date;
+
+	@Column
 	private String time;
+
+	@Column
 	private String type;
+
+	@Column
 	private String location;
+
+	@Column
 	private boolean helmet;
+
+	@Column
 	private String mechanism;
-	
-	public DetailsOfAccidentModel(String date, String time, String type, String location, boolean helmet,
+
+	public DetailsOfAccident() {
+	}
+
+	public DetailsOfAccident(int id, String date, String time, String type, String location, boolean helmet,
 			String mechanism) {
-		super();
+		this.id = id;
 		this.date = date;
 		this.time = time;
 		this.type = type;
 		this.location = location;
 		this.helmet = helmet;
 		this.mechanism = mechanism;
+	}
+
+	public int getId() {
+		return id;
 	}
 
 	public String getDate() {
@@ -52,7 +77,7 @@ public class DetailsOfAccidentModel {
 		this.location = location;
 	}
 
-	public boolean isHelmet() {
+	public boolean hasHelmet() {
 		return helmet;
 	}
 
@@ -67,6 +92,5 @@ public class DetailsOfAccidentModel {
 	public void setMechanism(String mechanism) {
 		this.mechanism = mechanism;
 	}
-	
-	
+
 }

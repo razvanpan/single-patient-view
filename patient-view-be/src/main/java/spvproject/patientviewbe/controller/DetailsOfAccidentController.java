@@ -1,18 +1,36 @@
 package spvproject.patientviewbe.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import spvproject.patientviewbe.model.DetailsOfAccidentModel;
-
+import spvproject.patientviewbe.services.DetailsOfAccidentService;
+import spvproject.patientviewbe.dto.DetailsOfAccidentDTO;
 
 @RestController
 @RequestMapping("/details-of-accident")
 public class DetailsOfAccidentController {
-	@GetMapping("/details-of-accident")
-	public DetailsOfAccidentModel detailsOfAccident() {
-		return new DetailsOfAccidentModel("26/06/2019","10:15","car accident","Goethestrasse 12", true, "blunt");
-	}
 
+	private final DetailsOfAccidentService detailsOfAccidentService;
+
+	@Autowired
+	public DetailsOfAccidentController(DetailsOfAccidentService detailsOfAccidentService) {
+		this.detailsOfAccidentService = detailsOfAccidentService;
+	}
+	
+	@GetMapping("/all")
+	public List<DetailsOfAccidentDTO> getDetailsOfAccident() {
+		return detailsOfAccidentService.getAllDetailsOfAccident().get();
+	}
+	
+	@PostMapping("/add")
+	public ResponseEntity<?> addDetailsOffAccident(@RequestBody DetailsOfAccidentDTO detailsOfAccidentDTO){
+		detailsOfAccidentService.createDetailsOfAccident(detailsOfAccidentDTO);
+		return ResponseEntity.ok(HttpStatus.OK);
+	}
 }
