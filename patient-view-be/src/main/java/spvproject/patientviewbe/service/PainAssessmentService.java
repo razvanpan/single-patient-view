@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spvproject.patientviewbe.dto.PainAssessmentDTO;
 import spvproject.patientviewbe.model.PainAssessment;
-
 import spvproject.patientviewbe.repository.PainAssessmentRepository;
 
 import java.util.ArrayList;
@@ -34,5 +33,10 @@ public class PainAssessmentService {
 	private Function<PainAssessment, PainAssessmentDTO> convertPainAssessmenttoData() {
 		return painAssessment -> new PainAssessmentDTO(painAssessment.getId(), painAssessment.getPainAssessment());
 
+	}
+	public void createPainAssessment(PainAssessmentDTO painAssessmentDTO) {
+        PainAssessment painAssessment = new PainAssessment(0,painAssessmentDTO.getPainAssessment());
+        painAssessmentRepository.save(painAssessment);
+        
 	}
 }

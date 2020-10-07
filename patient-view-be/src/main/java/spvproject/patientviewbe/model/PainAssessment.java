@@ -16,6 +16,10 @@ public class PainAssessment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	public PainAssessment() {
+
+	}
+
 	public PainAssessment(int id, int painAssessment)
 
 	{
@@ -32,6 +36,14 @@ public class PainAssessment {
 	public int getId() {
 
 		return id;
+	}
+
+	public void setPainAssessment(int painAssessment) {
+		this.painAssessment = painAssessment;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
