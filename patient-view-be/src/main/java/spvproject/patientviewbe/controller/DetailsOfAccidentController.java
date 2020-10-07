@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import spvproject.patientviewbe.services.DetailsOfAccidentService;
 import spvproject.patientviewbe.dto.DetailsOfAccidentDTO;
+import spvproject.patientviewbe.service.DetailsOfAccidentService;
 
 @RestController
 @RequestMapping("/details-of-accident")
