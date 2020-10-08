@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import spvproject.patientviewbe.dto.PatientBannerDTO;
 import spvproject.patientviewbe.model.PatientBanner;
+import spvproject.patientviewbe.repository.PatientBannerRepository;
 import spvproject.patientviewbe.service.PatientBannerService;
 
 @CrossOrigin(origins = "http://localhost:3000")
