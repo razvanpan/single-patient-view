@@ -1,53 +1,21 @@
-package spvproject.patientviewbe.model;
+package spvproject.patientviewbe.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "banner")
-public class PatientBanner {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PatientBannerDTO {
 	private String ID;
-	
-	@Column(name = "name")
 	private String name;
-	
-	@Column(name = "gender")
 	private String gender;
-	
-	@Column(name = "age")
 	private int age;
-	
-	@Column(name = "birthDate")
 	private String birthDate;
-	
-	@Column(name = "lengthStay")
 	private String lengthStay;
-	
-	@Column(name = "ED")
 	private String ED;
-	
-	@Column(name = "allergies")
 	private String allergies;
-	
-	@Column(name = "eID")
 	private String eID;
-	
-	@Column(name = "triage")
 	private String triage;
-	
-	@Column(name = "risks")
 	private String risks;
 	
-	public PatientBanner() {}
+	public PatientBannerDTO() {}
 	
-	public PatientBanner(String iD, String name, String gender, int age, String birthDate, String lengthStay,
+	public PatientBannerDTO(String iD, String name, String gender, int age, String birthDate, String lengthStay,
 			String eD, String allergies, String eID, String triage, String risks) {
 		this.ID = iD;
 		this.name = name;
