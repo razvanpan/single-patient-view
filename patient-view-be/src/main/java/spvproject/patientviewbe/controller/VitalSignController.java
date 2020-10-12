@@ -9,7 +9,7 @@ import spvproject.patientviewbe.service.VitalSignService;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping("/vital-signs")
 public class VitalSignController {
@@ -29,6 +29,12 @@ public class VitalSignController {
     @PostMapping("/add")
 	public ResponseEntity<?> addVitalSign(@RequestBody VitalSignDTO vitalSignDTO) {
 		vitalSignService.createVitalSign(vitalSignDTO);
+		return ResponseEntity.ok(HttpStatus.OK);
+	}
+
+	@PatchMapping("/edit/{id}/{value}")
+	public ResponseEntity<?> editVitalSign(@PathVariable("id") int id, @PathVariable("value") String value){
+		vitalSignService.updateVitalSign(id, value);
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
 }
