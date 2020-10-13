@@ -7,6 +7,7 @@ import spvproject.patientviewbe.repository.AnamnesisRepository;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/anamnesis")
 public class AnamnesisController {
