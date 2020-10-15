@@ -39,4 +39,5 @@ public class VitalSignService {
 		return vitalSign -> new VitalSignDTO(vitalSign.getId(), vitalSign.getVitalSign(), vitalSign.getValue(),
 				vitalSign.getUnitMeasure(), vitalSign.getTime());
 	}
+
 }
