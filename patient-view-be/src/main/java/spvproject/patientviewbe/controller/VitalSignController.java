@@ -33,8 +33,7 @@ public class VitalSignController {
 	}
 
 	@PatchMapping("/edit/{id}/{value}")
-	public ResponseEntity<?> editVitalSign(@PathVariable("id") int id, @PathVariable("value") String value){
-		vitalSignService.updateVitalSign(id, value);
-		return ResponseEntity.ok(HttpStatus.OK);
+	public VitalSignDTO editVitalSign(@PathVariable("id") int id, @PathVariable("value") String value){
+		return vitalSignService.updateVitalSign(id, value);
 	}
 }

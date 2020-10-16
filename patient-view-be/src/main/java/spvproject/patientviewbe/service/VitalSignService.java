@@ -35,10 +35,12 @@ public class VitalSignService {
         vitalSignRepository.save(vitalSign);
 	}
 
-	public void updateVitalSign(int id, String value) {
+	public VitalSignDTO updateVitalSign(int id, String value) {
 		Optional<VitalSign> vitalSign = vitalSignRepository.findById(id);
 		vitalSign.get().setValue(value);
 		vitalSignRepository.save(vitalSign.get());
+		VitalSignDTO vitalSignDTO = convertVitalSignModelToData().apply(vitalSign.get());
+		return vitalSignDTO;
 	}
 
     private Function<VitalSign, VitalSignDTO> convertVitalSignModelToData() {
