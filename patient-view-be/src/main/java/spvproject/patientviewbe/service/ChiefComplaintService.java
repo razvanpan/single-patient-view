@@ -30,6 +30,17 @@ public class ChiefComplaintService {
 		chiefComplaintRepository.save(chiefComplaintModel);
 	}
 
+	public boolean update(int id, String note) {
+
+		ChiefComplaint chiefComplaint = chiefComplaintRepository.findById(id).orElse(null);
+		if (chiefComplaint != null) {
+			chiefComplaint.setAdmisionNote(note);
+			chiefComplaintRepository.save(chiefComplaint);
+			return true;
+		}
+		return false;
+	}
+
 	public ChiefComplaint get(final int id) {
 		return chiefComplaintRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Not found"));
 	}
