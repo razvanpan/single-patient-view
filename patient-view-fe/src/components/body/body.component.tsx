@@ -2,19 +2,14 @@ import React from "react";
 import "./body.component.css";
 import PhysicalExamination from "../physical-examination/physical-examination.component";
 import AnamnesisComponent from "../anamnesis/anamnesis.component";
-import ChiefComplaint from "chief-complaint-lung-alexandru";
+import ChiefComplaintComponent from "../chief-complaint/chief-complaint.component";
 
 const BodyContainer = () => (
   <div className={"body-container"}>
     <div className={"card-area"}>
+      <ChiefComplaintComponent></ChiefComplaintComponent>
       <PhysicalExamination />
       <AnamnesisComponent></AnamnesisComponent>
-      <div className={"chief-complaint"}>
-        <ChiefComplaint></ChiefComplaint>
-      </div>
-      <div>
-        <AnamnesisComponent></AnamnesisComponent>
-      </div>
     </div>
     <div className={"work-panel"}>Work-panel</div>
   </div>
