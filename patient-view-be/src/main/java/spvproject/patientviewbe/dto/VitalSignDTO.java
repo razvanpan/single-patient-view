@@ -1,61 +1,53 @@
 package spvproject.patientviewbe.dto;
 
 public class VitalSignDTO {
-    private int id;
-    private String vitalSign;
-    private String value;
-    private String unitMeasure;
-    private String time;
+	private int id;
+	private String vitalSign;
+	private String value;
+	private String unitMeasure;
+	private String time;
 
-    public VitalSignDTO() {
+	public VitalSignDTO() {
 
-    }
+	}
 
-    public VitalSignDTO(int id, String vitalSign, String value, String unitMeasure, String time) {
-        this.id = id;
-        this.vitalSign = vitalSign;
-        this.value = value;
-        this.unitMeasure = unitMeasure;
-        this.time = time;
-    }
+	public VitalSignDTO(int id, String vitalSign, String value, String unitMeasure, String time) {
+		this.id = id;
+		this.vitalSign = vitalSign;
+		this.value = value;
+		this.unitMeasure = unitMeasure;
+		this.time = time;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public String getVitalSign() {
+		return vitalSign;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setVitalSign(String vitalSign) {
+		this.vitalSign = vitalSign;
+	}
 
-    public String getVitalSign() {
-        return vitalSign;
-    }
+	public String getValue() {
+		return value;
+	}
 
-    public void setVitalSign(String vitalSign) {
-        this.vitalSign = vitalSign;
-    }
+	public void setValue(String value) {
+		this.value = value;
+	}
 
-    public String getValue() {
-        return value;
-    }
+	public String getUnitMeasure() {
+		return unitMeasure;
+	}
 
-    public void setValue(String value) {
-        this.value = value;
-    }
+	public void setUnitMeasure(String unitMeasure) {
+		this.unitMeasure = unitMeasure;
+	}
 
-    public String getUnitMeasure() {
-        return unitMeasure;
-    }
+	public String getTime() {
+		return time;
+	}
 
-    public void setUnitMeasure(String unitMeasure) {
-        this.unitMeasure = unitMeasure;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
+	public void setTime(String time) {
+		this.time = time;
+	}
 }
