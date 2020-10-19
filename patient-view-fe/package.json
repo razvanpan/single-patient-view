@@ -13,6 +13,7 @@
     "anamnesis": "^1.2.1",
     "com.training.physical-examination": "^1.0.3",
     "pain-assessment": "^1.0.5",
+    "chief-complaint-lung-alexandru": "^2.0.0",
     "patient-banner": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
