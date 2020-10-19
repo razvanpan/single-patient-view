@@ -22,7 +22,7 @@
     "style-loader": "^1.2.1",
     "terra-card": "^3.34.0",
     "terra-content-container": "^3.30.0",
-    "vital-signs-spv": "^1.0.1"
+    "vital-signs-spv": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

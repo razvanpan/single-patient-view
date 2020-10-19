@@ -1,15 +1,3 @@
-.vital-signs > div > div > div {
-  position: unset;
-}
-
-.vital-signs > div > div > div:nth-child(2) {
-  top: 11%;
-  width: 100%;
-  height: 100%;
-  position: unset;
-}
-
-.vital-signs > div > div > div:nth-child(3) {
-  bottom: 71%;
-  position: unset;
+.vital-signs {
+  text-align: left;
 }
