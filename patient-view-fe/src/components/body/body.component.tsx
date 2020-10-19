@@ -12,6 +12,9 @@ const BodyContainer = () => (
       <div className={"chief-complaint"}>
         <ChiefComplaint></ChiefComplaint>
       </div>
+      <div>
+        <AnamnesisComponent></AnamnesisComponent>
+      </div>
     </div>
     <div className={"work-panel"}>Work-panel</div>
   </div>
