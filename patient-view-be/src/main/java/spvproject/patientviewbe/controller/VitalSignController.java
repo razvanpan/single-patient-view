@@ -5,11 +5,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import spvproject.patientviewbe.dto.VitalSignDTO;
+
 import spvproject.patientviewbe.service.VitalSignService;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping("/vital-signs")
 public class VitalSignController {
@@ -30,5 +31,10 @@ public class VitalSignController {
 	public ResponseEntity<?> addVitalSign(@RequestBody VitalSignDTO vitalSignDTO) {
 		vitalSignService.createVitalSign(vitalSignDTO);
 		return ResponseEntity.ok(HttpStatus.OK);
+	}
+
+	@PatchMapping("/edit/{id}/{value}")
+	public VitalSignDTO editVitalSign(@PathVariable("id") int id, @PathVariable("value") String value){
+		return vitalSignService.updateVitalSign(id, value);
 	}
 }
