@@ -1,12 +1,11 @@
-import React from 'react';
-import './header.component.css'
-import {PatientBannerComponent} from 'patient-banner'
-import 'patient-banner/dist/index.css'
-
+import React from "react";
+import "./header.component.css";
+import { PatientBannerComponent } from "patient-banner";
+import "patient-banner/dist/index.css";
 
 const HeaderContainer = () => (
-  <div className={'header'}>
-   <PatientBannerComponent></PatientBannerComponent>
+  <div className={"header"}>
+    <PatientBannerComponent></PatientBannerComponent>
   </div>
 );
 
