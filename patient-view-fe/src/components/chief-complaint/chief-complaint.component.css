@@ -7,21 +7,3 @@
 .chief-complaint {
   padding: 20px;
 }
-
-.chief-complaint > div > div > div:nth-child(1) {
-  background-color: #e5eef9;
-}
-.chief-complaint > div > div:nth-child(1) {
-  border-bottom-style: solid;
-  border-color: #c8def5;
-}
-.chief-complaint > div > div:nth-child(3) {
-  border-top-style: solid;
-  border-color: #c8def5;
-}
-.chief-complaint > div > div:nth-child(2) {
-  border-color: #ebf3fb;
-}
-.chief-complaint > div > div > div > div:nth-child(1) {
-  font-weight: bold;
-}

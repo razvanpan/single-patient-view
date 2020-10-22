@@ -11,7 +11,7 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "anamnesis": "^1.2.3",
-    "chief-complaint-lung-alexandru": "^2.1.0",
+    "chief-complaint-lung-alexandru": "^2.2.3",
     "com.training.physical-examination": "^1.0.3",
     "pain-assessment": "^1.0.6",
     "patient-banner": "^1.0.0",
