@@ -5,16 +5,20 @@ import AnamnesisComponent from "../anamnesis/anamnesis.component";
 import PainAssessmentComponent from "../pain-assessment/pain-assessment";
 import ChiefComplaintComponent from "../chief-complaint/chief-complaint.component";
 import VitalSignComponent from "../vital-signs/vital-signs.component";
+import TriageComponent from "../triage/triage.component";
 const BodyContainer = () => (
   <div className={"body-container"}>
     <div className={"card-area"}>
-      <PainAssessmentComponent></PainAssessmentComponent>
-      <ChiefComplaintComponent></ChiefComplaintComponent>
-      <PhysicalExamination />
+      <ChiefComplaintComponent />
       <VitalSignComponent />
-      <AnamnesisComponent></AnamnesisComponent>
+      <AnamnesisComponent />
+
+      <PainAssessmentComponent />
+      <PhysicalExamination />
     </div>
-    <div className={"work-panel"}>Work-panel</div>
+    <div className={"work-panel"}>
+      <TriageComponent />
+    </div>
   </div>
 );
 

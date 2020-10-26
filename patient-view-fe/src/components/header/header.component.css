@@ -1,4 +1,7 @@
 .header {
-  background-color: rgb(102, 153, 153);
+  background-color: #c8def5;
   height: 65px;
+}
+.header > div > div {
+  background-color: #c8def5;
 }

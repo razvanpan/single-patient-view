@@ -6,7 +6,7 @@ import "./chief-complaint.component.css";
 
 const ChiefComplaintComponent = () => (
   <div className={"chief-complaint"}>
-    <ChiefComplaint></ChiefComplaint>;
+    <ChiefComplaint></ChiefComplaint>
   </div>
 );
 export default ChiefComplaintComponent;
